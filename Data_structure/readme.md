@@ -1,1 +1,1 @@
--- All the methods called in Main.java 
+--  All the methods called in Main.java 
