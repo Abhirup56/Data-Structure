@@ -37,6 +37,7 @@ public class Main {
         sc.close();
         return;
     }
+
     static void queue() {
         Scanner sc = new Scanner(System.in);
         System.out.println("SIZE : ");
@@ -47,7 +48,7 @@ public class Main {
             System.out.println("-----QUEUE MANU-----\n1. Enqueue\n2. Dequeue\n3. Peek\n4. Display\n5. Exit");
             System.out.print("choose any one : ");
             ch = sc.nextInt();
-            switch(n){
+            switch (n) {
                 case 1:
                     System.out.print("Value : ");
                     int val = sc.nextInt();
@@ -63,7 +64,7 @@ public class Main {
                     queue.disp();
                     break;
                 case 5:
-                        return;       
+                    return;
                 default:
                     System.out.println("INVALID");
             }
@@ -71,27 +72,65 @@ public class Main {
         sc.close();
         return;
     }
+    static void circular_que() {
+        System.out.println("-----CIRCULAR QUEUE-----");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("SIZE : ");
+        int n = sc.nextInt();
+        Circ_Queue cir = new Circ_Queue(n);
+        int ch;
+        do {
+            System.out.println("\n-----CIRCULAR QUEUE MANU-----\n1. Enqueue\n2. Dequeue\n3. Peek\n4. Display\n5. Exit");
+            System.out.print("choose any one : ");
+            ch = sc.nextInt();
+            switch (ch) {
+                case 1:
+                    System.out.print("Value : ");
+                    int val = sc.nextInt();
+                    cir.enqueue(val);
+                    break;
+                case 2:
+                    cir.dequeue();
+                    break;
+                case 3:
+                    cir.peek();
+                    break;
+                case 4:
+                    cir.disp();
+                    break;
+                case 5:
+                    return;
+                default:
+                    System.out.println("INVALID");
+            }
+        } while (ch != 5);
+        sc.close();
+        return;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("1. Stack\n2. Queue\n3. Exit\n");
+        System.out.print("-----MAIN MANUE-----\n1. Stack\n2. Queue\n3. Circular queue\n4. Exit\nChoose : ");
         int n = sc.nextInt();
 
-        do { 
+        do {
             switch (n) {
-            case 1:
-                stack();
-                break;
-            case 2:
-                queue();
-                break;
-            case 3:
-                System.out.println("Exiting Program...");
-            default:
-                System.out.println("INVALID");
-        }
-        } while (n!=3);
+                case 1:
+                    stack();
+                    break;
+                case 2:
+                    queue();
+                    break;
+                case 3:
+                    circular_que();
+                    break;
+                case 4:
+                    System.out.println("Exiting Program...");
+                default:
+                    System.out.println("INVALID");
+            }
+        } while (n != 3);
         sc.close();
 
-        
     }
 }

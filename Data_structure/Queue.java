@@ -51,8 +51,8 @@ public class Queue {
             return;
         }
         System.out.print("\n [");
-        for (int val : arr) {
-            System.out.print(val + " ");
+        for (int i=front;i<=rear;i++) {
+            System.out.print(arr[i] + " ");
         }
         System.out.println("] \n");
     }
